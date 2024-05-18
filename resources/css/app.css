@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.container{
+    @apply lg:px-[120px];
+}
+
+.bg-hero{
+    background-image: url('https://sekolahsunnah.com/FrontEnd/assets/img/bg-ss-highlight.jpg');
+    background-position: center;
+    background-size: cover;
+    filter: brightness(50%);
+}
+
+.hero{
+    position: relative;
+    width: 100%;
+    min-height: fit-content;
+    height: auto;
+}
+
+.hero::before{
+    content:"";
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: url('https://sekolahsunnah.com/FrontEnd/assets/img/bg-ss-highlight.jpg');
+    background-position: center;
+    background-size: cover;
+    filter: brightness(50%);
+}
+
+.fe-input{
+    @apply p-4 rounded-md;
+}
