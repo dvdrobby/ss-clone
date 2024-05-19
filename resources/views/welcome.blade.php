@@ -1,87 +1,297 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        @vite('resources/css/app.css')
 
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+<x-layout>
 
-        <title>Direktori Sekolah Sunnah se-Indonesia</title>
+    <x-slot:title>{{ $title }}</x-slot:title>
+    <x-slot:tagline>{{ $tagline }}</x-slot:tagline>
 
-        <!-- Styles -->
-        
-    </head>
-    <body class="antialiased dark:bg-black dark:text-white/50 min-w-full">
-        <section class="pb-20">
-            <div class="bg-gray-600 py-2">
-                <div class="container text-xs text-white font-semibold">Direktori Sekolah Sunnah se-Indonesia</div>
-            </div>
-            <div class="py-6 h-auto min-w-full flex items-center justify-between container">
-                <div class="w-[400px]">
-                    <img src="https://sekolahsunnah.com/FrontEnd/assets/img/logo-ss-c.png" >
-                </div>
-                <div class="text-white flex items-center justify-end ml-auto space-x-8 font-semibold">
-                    <a href="">Home</a>
-                    <a href="">Kontak Kami</a>
-                    <a href="">Donasi</a>
-                    <button class="rounded-full bg-green-500 text-xs font-bold px-4 py-2">SUBMIT DATA SEKOLAH</button>
-                </div>
-            </div>
-            <div class="border-b-[0.5px] mx-[120px]"></div>
-
-            {{-- tagline --}}
-            <div class="px-[220px] text-center my-10 text-white font-semibold text-4xl">Cari Sekolah Impian Bermanhaj Salaf Yang Sesuai Untuk Buah Hati Anda Hanya Di SekolahSunnah.com</div>
-
-            {{-- form search --}}
-            <form class="container min-w-full flex items-center justify-center space-x-2">
-                <div class="text-white space-y-2 w-[400px]">
-                    <label for="sekolah" class="text-lg">Cari Sekolah Apa?</label>
-                    <input id="sekolah" name="sekolah" class="fe-input w-full text-slate-800" placeholder="Masukkan nama sekolah...">
-                </div>
-                <div class="text-white space-y-2 flex-1">
-                    <label for="lokasi" class="text-lg">Dimana?</label>
-                    <input id="lokasi" name="lokasi" class="fe-input w-full text-slate-800" placeholder="Ketik Nama Kota">
-                </div>
-                <div class="text-white space-y-2">
-                    <p class="text-lg opacity-0">Dimana?</p>
-                    <button class="text-white fe-input w-[200px] grow-0 bg-green-500">Tampilkan Pencarian</button>
-                </div>
-                
-            </form>
-
-            <div class="container my-4 flex items-center justify-start space-x-2 cursor-pointer">
-                <div class="text-green-500 font-bold text-xl">+</div>
-                <div class="text-white font-semibold text-sm">Detail Pencarian</div>
-            </div>
-            <div class="container min-w-full mb-20">
-                <div class="bg-white rounded-md px-8 py-10 min-w-full flex
-                items-center justify-start space-x-2 flex-wrap">
-                    <div class="flex space-x-4 w-[200px]">
-                        <input type="checkbox" class="checked:bg-green-500" id="akhwat" name="akhwat">
-                        <label for="akhwat">Akhwat</label>
+   <section class="min-w-full pb-24">
+            <div class="container-page">
+                <h1 class="text-2xl font-semibold py-4 my-8">Jenjang Sekolah</h1>
+                <div class="grid grid-cols-5 gap-4 min-w-full">
+                    <div class="flex justify-items-center items-center space-x-4 max-w-[180px]">
+                        <div class="w-14 h-14 rounded-full bg-green-500 text-white flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="3em" height="3em" viewBox="0 0 24 24"><g fill="none" fill-rule="evenodd"><path d="M24 0v24H0V0zM12.593 23.258l-.011.002l-.071.035l-.02.004l-.014-.004l-.071-.035c-.01-.004-.019-.001-.024.005l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427c-.002-.01-.009-.017-.017-.018m.265-.113l-.013.002l-.185.093l-.01.01l-.003.011l.018.43l.005.012l.008.007l.201.093c.012.004.023 0 .029-.008l.004-.014l-.034-.614c-.003-.012-.01-.02-.02-.022m-.715.002a.023.023 0 0 0-.027.006l-.006.014l-.034.614c0 .012.007.02.017.024l.015-.002l.201-.093l.01-.008l.004-.011l.017-.43l-.003-.012l-.01-.01z"/><path fill="currentColor" d="M11.063 2.469a1.5 1.5 0 0 1 1.753-.087l.121.087l4.312 3.45a2 2 0 0 1 .743 1.38L18 7.48V19h1v-8.5a.5.5 0 0 1 .41-.492L19.5 10h.5a2 2 0 0 1 1.995 1.85L22 12v7.9a1.1 1.1 0 0 1-.98 1.093L20.9 21H3.1a1.1 1.1 0 0 1-1.094-.98L2 19.9V12a2 2 0 0 1 1.85-1.995L4 10h.5a.5.5 0 0 1 .492.41L5 10.5V19h1V7.48a2 2 0 0 1 .614-1.442l.137-.12zM12 8.999a2 2 0 1 0 0 4a2 2 0 0 0 0-4"/></g></svg>
+                        </div>
+                        <div class="flex flex-col">
+                            <div>
+                                <h4 class="text-xl dont-semibold">PAUD <span class="bg-blue-600 px-2 rounded-md text-white text-sm">15</span></h4>
+                                
+                            </div>
+                            <p>Pendidikan Anak usia Dini</p>
+                        </div>
                     </div>
-                    <div class="flex space-x-4 w-[200px]">
-                        <input type="checkbox" class="checked:bg-green-500" id="ikhwan" name="ikhwan">
-                        <label for="ikhwan">Ikhwan</label>
+                    <div class="flex justify-items-center items-center space-x-4 max-w-[180px]">
+                        <div class="w-14 h-14 rounded-full bg-green-500 text-white flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="3em" height="3em" viewBox="0 0 24 24"><g fill="none" fill-rule="evenodd"><path d="M24 0v24H0V0zM12.593 23.258l-.011.002l-.071.035l-.02.004l-.014-.004l-.071-.035c-.01-.004-.019-.001-.024.005l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427c-.002-.01-.009-.017-.017-.018m.265-.113l-.013.002l-.185.093l-.01.01l-.003.011l.018.43l.005.012l.008.007l.201.093c.012.004.023 0 .029-.008l.004-.014l-.034-.614c-.003-.012-.01-.02-.02-.022m-.715.002a.023.023 0 0 0-.027.006l-.006.014l-.034.614c0 .012.007.02.017.024l.015-.002l.201-.093l.01-.008l.004-.011l.017-.43l-.003-.012l-.01-.01z"/><path fill="currentColor" d="M11.063 2.469a1.5 1.5 0 0 1 1.753-.087l.121.087l4.312 3.45a2 2 0 0 1 .743 1.38L18 7.48V19h1v-8.5a.5.5 0 0 1 .41-.492L19.5 10h.5a2 2 0 0 1 1.995 1.85L22 12v7.9a1.1 1.1 0 0 1-.98 1.093L20.9 21H3.1a1.1 1.1 0 0 1-1.094-.98L2 19.9V12a2 2 0 0 1 1.85-1.995L4 10h.5a.5.5 0 0 1 .492.41L5 10.5V19h1V7.48a2 2 0 0 1 .614-1.442l.137-.12zM12 8.999a2 2 0 1 0 0 4a2 2 0 0 0 0-4"/></g></svg>
+                        </div>
+                        <div class="flex flex-col">
+                            <div>
+                                <h4 class="text-xl dont-semibold">PAUD <span class="bg-blue-600 px-2 rounded-md text-white text-sm">15</span></h4>
+                                
+                            </div>
+                            <p>Pendidikan Anak usia Dini</p>
+                        </div>
                     </div>
-                    <div class="flex space-x-4 w-[100px]">
-                        <input type="checkbox" class="checked:bg-green-500" id="boarding" name="boarding">
-                        <label for="boarding">Boarding</label>
+                    <div class="flex justify-items-center items-center space-x-4 max-w-[180px]">
+                        <div class="w-14 h-14 rounded-full bg-green-500 text-white flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="3em" height="3em" viewBox="0 0 24 24"><g fill="none" fill-rule="evenodd"><path d="M24 0v24H0V0zM12.593 23.258l-.011.002l-.071.035l-.02.004l-.014-.004l-.071-.035c-.01-.004-.019-.001-.024.005l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427c-.002-.01-.009-.017-.017-.018m.265-.113l-.013.002l-.185.093l-.01.01l-.003.011l.018.43l.005.012l.008.007l.201.093c.012.004.023 0 .029-.008l.004-.014l-.034-.614c-.003-.012-.01-.02-.02-.022m-.715.002a.023.023 0 0 0-.027.006l-.006.014l-.034.614c0 .012.007.02.017.024l.015-.002l.201-.093l.01-.008l.004-.011l.017-.43l-.003-.012l-.01-.01z"/><path fill="currentColor" d="M11.063 2.469a1.5 1.5 0 0 1 1.753-.087l.121.087l4.312 3.45a2 2 0 0 1 .743 1.38L18 7.48V19h1v-8.5a.5.5 0 0 1 .41-.492L19.5 10h.5a2 2 0 0 1 1.995 1.85L22 12v7.9a1.1 1.1 0 0 1-.98 1.093L20.9 21H3.1a1.1 1.1 0 0 1-1.094-.98L2 19.9V12a2 2 0 0 1 1.85-1.995L4 10h.5a.5.5 0 0 1 .492.41L5 10.5V19h1V7.48a2 2 0 0 1 .614-1.442l.137-.12zM12 8.999a2 2 0 1 0 0 4a2 2 0 0 0 0-4"/></g></svg>
+                        </div>
+                        <div class="flex flex-col">
+                            <div>
+                                <h4 class="text-xl dont-semibold">PAUD <span class="bg-blue-600 px-2 rounded-md text-white text-sm">15</span></h4>
+                                
+                            </div>
+                            <p>Pendidikan Anak usia Dini</p>
+                        </div>
                     </div>
-                    <input class="w-200px p-4 border-2 outline-none" type="text" placeholder="SPP minimal               Rp">
-                    <input class="w-200px p-4 border-2 outline-none" type="text" placeholder="SPP maksimal               Rp">
-
+                    <div class="flex justify-items-center items-center space-x-4 max-w-[180px]">
+                        <div class="w-14 h-14 rounded-full bg-green-500 text-white flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="3em" height="3em" viewBox="0 0 24 24"><g fill="none" fill-rule="evenodd"><path d="M24 0v24H0V0zM12.593 23.258l-.011.002l-.071.035l-.02.004l-.014-.004l-.071-.035c-.01-.004-.019-.001-.024.005l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427c-.002-.01-.009-.017-.017-.018m.265-.113l-.013.002l-.185.093l-.01.01l-.003.011l.018.43l.005.012l.008.007l.201.093c.012.004.023 0 .029-.008l.004-.014l-.034-.614c-.003-.012-.01-.02-.02-.022m-.715.002a.023.023 0 0 0-.027.006l-.006.014l-.034.614c0 .012.007.02.017.024l.015-.002l.201-.093l.01-.008l.004-.011l.017-.43l-.003-.012l-.01-.01z"/><path fill="currentColor" d="M11.063 2.469a1.5 1.5 0 0 1 1.753-.087l.121.087l4.312 3.45a2 2 0 0 1 .743 1.38L18 7.48V19h1v-8.5a.5.5 0 0 1 .41-.492L19.5 10h.5a2 2 0 0 1 1.995 1.85L22 12v7.9a1.1 1.1 0 0 1-.98 1.093L20.9 21H3.1a1.1 1.1 0 0 1-1.094-.98L2 19.9V12a2 2 0 0 1 1.85-1.995L4 10h.5a.5.5 0 0 1 .492.41L5 10.5V19h1V7.48a2 2 0 0 1 .614-1.442l.137-.12zM12 8.999a2 2 0 1 0 0 4a2 2 0 0 0 0-4"/></g></svg>
+                        </div>
+                        <div class="flex flex-col">
+                            <div>
+                                <h4 class="text-xl dont-semibold">PAUD <span class="bg-blue-600 px-2 rounded-md text-white text-sm">15</span></h4>
+                                
+                            </div>
+                            <p>Pendidikan Anak usia Dini</p>
+                        </div>
+                    </div>
+                    <div class="flex justify-items-center items-center space-x-4 max-w-[180px]">
+                        <div class="w-14 h-14 rounded-full bg-green-500 text-white flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="3em" height="3em" viewBox="0 0 24 24"><g fill="none" fill-rule="evenodd"><path d="M24 0v24H0V0zM12.593 23.258l-.011.002l-.071.035l-.02.004l-.014-.004l-.071-.035c-.01-.004-.019-.001-.024.005l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427c-.002-.01-.009-.017-.017-.018m.265-.113l-.013.002l-.185.093l-.01.01l-.003.011l.018.43l.005.012l.008.007l.201.093c.012.004.023 0 .029-.008l.004-.014l-.034-.614c-.003-.012-.01-.02-.02-.022m-.715.002a.023.023 0 0 0-.027.006l-.006.014l-.034.614c0 .012.007.02.017.024l.015-.002l.201-.093l.01-.008l.004-.011l.017-.43l-.003-.012l-.01-.01z"/><path fill="currentColor" d="M11.063 2.469a1.5 1.5 0 0 1 1.753-.087l.121.087l4.312 3.45a2 2 0 0 1 .743 1.38L18 7.48V19h1v-8.5a.5.5 0 0 1 .41-.492L19.5 10h.5a2 2 0 0 1 1.995 1.85L22 12v7.9a1.1 1.1 0 0 1-.98 1.093L20.9 21H3.1a1.1 1.1 0 0 1-1.094-.98L2 19.9V12a2 2 0 0 1 1.85-1.995L4 10h.5a.5.5 0 0 1 .492.41L5 10.5V19h1V7.48a2 2 0 0 1 .614-1.442l.137-.12zM12 8.999a2 2 0 1 0 0 4a2 2 0 0 0 0-4"/></g></svg>
+                        </div>
+                        <div class="flex flex-col">
+                            <div>
+                                <h4 class="text-xl dont-semibold">PAUD <span class="bg-blue-600 px-2 rounded-md text-white text-sm">15</span></h4>
+                                
+                            </div>
+                            <p>Pendidikan Anak usia Dini</p>
+                        </div>
+                    </div>
+                    <div class="flex justify-items-center items-center space-x-4 max-w-[180px]">
+                        <div class="w-14 h-14 rounded-full bg-green-500 text-white flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="3em" height="3em" viewBox="0 0 24 24"><g fill="none" fill-rule="evenodd"><path d="M24 0v24H0V0zM12.593 23.258l-.011.002l-.071.035l-.02.004l-.014-.004l-.071-.035c-.01-.004-.019-.001-.024.005l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427c-.002-.01-.009-.017-.017-.018m.265-.113l-.013.002l-.185.093l-.01.01l-.003.011l.018.43l.005.012l.008.007l.201.093c.012.004.023 0 .029-.008l.004-.014l-.034-.614c-.003-.012-.01-.02-.02-.022m-.715.002a.023.023 0 0 0-.027.006l-.006.014l-.034.614c0 .012.007.02.017.024l.015-.002l.201-.093l.01-.008l.004-.011l.017-.43l-.003-.012l-.01-.01z"/><path fill="currentColor" d="M11.063 2.469a1.5 1.5 0 0 1 1.753-.087l.121.087l4.312 3.45a2 2 0 0 1 .743 1.38L18 7.48V19h1v-8.5a.5.5 0 0 1 .41-.492L19.5 10h.5a2 2 0 0 1 1.995 1.85L22 12v7.9a1.1 1.1 0 0 1-.98 1.093L20.9 21H3.1a1.1 1.1 0 0 1-1.094-.98L2 19.9V12a2 2 0 0 1 1.85-1.995L4 10h.5a.5.5 0 0 1 .492.41L5 10.5V19h1V7.48a2 2 0 0 1 .614-1.442l.137-.12zM12 8.999a2 2 0 1 0 0 4a2 2 0 0 0 0-4"/></g></svg>
+                        </div>
+                        <div class="flex flex-col">
+                            <div>
+                                <h4 class="text-xl dont-semibold">PAUD <span class="bg-blue-600 px-2 rounded-md text-white text-sm">15</span></h4>
+                                
+                            </div>
+                            <p>Pendidikan Anak usia Dini</p>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div class="bg-hero min-w-full h-[700px] absolute top-0 left-0 -z-20">
             </div>
         </section>
-        <section>Jenjang Sekolah</section>
-        <section>Sekolah Pilihan</section>
-        <section>Sekolah Terbaru</section>
-        <section>Footer</section>
-    </body>
-</html>
+        <section class="min-w-full bg-white pb-24">
+            <div class="container-page">
+                <h1 class="text-2xl font-semibold mb-16 pt-16" >Sekolah Terbaru</h1>
+                <div class="grid grid-cols-3 min-w-full gap-6">
+                    {{-- card --}}
+                    <div class="shadow-md max-w-[500px] rounded-sm relative overflow-hidden bg-gray-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 cursor-pointer">
+                        <div class="w-full h-[250px] bg-slate-700 -z-10 p-1" >image</div>
+                        <div class="px-4 py-6 flex items-center justify-start text-xs text-gray-400 space-x-2">
+                            <div>Full Day</div>
+                            <div>Rp.9,500,000</div>
+                        </div>
+                        <div class="bg-white flex justify-star items-end h-20 p-4">
+                            <a href="" class="text-green-600 text-xs font-bold underline">LIHAT SEKOLAH</a>
+                        </div>
+                        <div class="flex flex-col justify-start space-y-2 ml-2 absolute top-36">
+                            <div class="flex space-x-2">
+                                <div class="bg-black text-white rounded-sm text-xs font-light w-fit px-1 uppercase">Akhwat</div>
+                                <div class="bg-black text-white rounded-sm text-xs font-light w-fit px-1 uppercase">Ikhwan</div>
+                            </div>
+                            <h1 class="text-white font-semibold">SDIT Ustman Bin Affan</h1>
+                            <div class="flex justify-start items-center space-x-2 text-xs">
+                                <div class="h-3 w-3 flex justify-center items-center text-gray-400 ">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M12 11.5A2.5 2.5 0 0 1 9.5 9A2.5 2.5 0 0 1 12 6.5A2.5 2.5 0 0 1 14.5 9a2.5 2.5 0 0 1-2.5 2.5M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7"/></svg>
+                                </div>
+                                <div class="text-white font-thin">Semarang, Jawa Tengah</div>
+                            </div>
+                            <div class="bg-gray-100 rounded-sm px-4 py-2 text-xl w-fit">Rp.300,000/Bulan</div>
+                        </div>
+                    </div>
+                    <div class="shadow-md max-w-[500px] rounded-sm relative overflow-hidden bg-gray-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 cursor-pointer">
+                        <div class="w-full h-[250px] bg-slate-700 -z-10 p-1" >image</div>
+                        <div class="px-4 py-6 flex items-center justify-start text-xs text-gray-400 space-x-2">
+                            <div>Full Day</div>
+                            <div>Rp.9,500,000</div>
+                        </div>
+                        <div class="bg-white flex justify-star items-end h-20 p-4">
+                            <a href="" class="text-green-600 text-xs font-bold underline">LIHAT SEKOLAH</a>
+                        </div>
+                        <div class="flex flex-col justify-start space-y-2 ml-2 absolute top-36">
+                            <div class="flex space-x-2">
+                                <div class="bg-black text-white rounded-sm text-xs font-light w-fit px-1 uppercase">Akhwat</div>
+                                <div class="bg-black text-white rounded-sm text-xs font-light w-fit px-1 uppercase">Ikhwan</div>
+                            </div>
+                            <h1 class="text-white font-semibold">SDIT Ustman Bin Affan</h1>
+                            <div class="flex justify-start items-center space-x-2 text-xs">
+                                <div class="h-3 w-3 flex justify-center items-center text-gray-400 ">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M12 11.5A2.5 2.5 0 0 1 9.5 9A2.5 2.5 0 0 1 12 6.5A2.5 2.5 0 0 1 14.5 9a2.5 2.5 0 0 1-2.5 2.5M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7"/></svg>
+                                </div>
+                                <div class="text-white font-thin">Semarang, Jawa Tengah</div>
+                            </div>
+                            <div class="bg-gray-100 rounded-sm px-4 py-2 text-xl w-fit">Rp.300,000/Bulan</div>
+                        </div>
+                    </div>
+                    <div class="shadow-md max-w-[500px] rounded-sm relative overflow-hidden bg-gray-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 cursor-pointer">
+                        <div class="w-full h-[250px] bg-slate-700 -z-10 p-1" >image</div>
+                        <div class="px-4 py-6 flex items-center justify-start text-xs text-gray-400 space-x-2">
+                            <div>Full Day</div>
+                            <div>Rp.9,500,000</div>
+                        </div>
+                        <div class="bg-white flex justify-star items-end h-20 p-4">
+                            <a href="" class="text-green-600 text-xs font-bold underline">LIHAT SEKOLAH</a>
+                        </div>
+                        <div class="flex flex-col justify-start space-y-2 ml-2 absolute top-36">
+                            <div class="flex space-x-2">
+                                <div class="bg-black text-white rounded-sm text-xs font-light w-fit px-1 uppercase">Akhwat</div>
+                                <div class="bg-black text-white rounded-sm text-xs font-light w-fit px-1 uppercase">Ikhwan</div>
+                            </div>
+                            <h1 class="text-white font-semibold">SDIT Ustman Bin Affan</h1>
+                            <div class="flex justify-start items-center space-x-2 text-xs">
+                                <div class="h-3 w-3 flex justify-center items-center text-gray-400 ">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M12 11.5A2.5 2.5 0 0 1 9.5 9A2.5 2.5 0 0 1 12 6.5A2.5 2.5 0 0 1 14.5 9a2.5 2.5 0 0 1-2.5 2.5M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7"/></svg>
+                                </div>
+                                <div class="text-white font-thin">Semarang, Jawa Tengah</div>
+                            </div>
+                            <div class="bg-gray-100 rounded-sm px-4 py-2 text-xl w-fit">Rp.300,000/Bulan</div>
+                        </div>
+                    </div>
+                    <div class="shadow-md max-w-[500px] rounded-sm relative overflow-hidden bg-gray-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 cursor-pointer">
+                        <div class="w-full h-[250px] bg-slate-700 -z-10 p-1" >image</div>
+                        <div class="px-4 py-6 flex items-center justify-start text-xs text-gray-400 space-x-2">
+                            <div>Full Day</div>
+                            <div>Rp.9,500,000</div>
+                        </div>
+                        <div class="bg-white flex justify-star items-end h-20 p-4">
+                            <a href="" class="text-green-600 text-xs font-bold underline">LIHAT SEKOLAH</a>
+                        </div>
+                        <div class="flex flex-col justify-start space-y-2 ml-2 absolute top-36">
+                            <div class="flex space-x-2">
+                                <div class="bg-black text-white rounded-sm text-xs font-light w-fit px-1 uppercase">Akhwat</div>
+                                <div class="bg-black text-white rounded-sm text-xs font-light w-fit px-1 uppercase">Ikhwan</div>
+                            </div>
+                            <h1 class="text-white font-semibold">SDIT Ustman Bin Affan</h1>
+                            <div class="flex justify-start items-center space-x-2 text-xs">
+                                <div class="h-3 w-3 flex justify-center items-center text-gray-400 ">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M12 11.5A2.5 2.5 0 0 1 9.5 9A2.5 2.5 0 0 1 12 6.5A2.5 2.5 0 0 1 14.5 9a2.5 2.5 0 0 1-2.5 2.5M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7"/></svg>
+                                </div>
+                                <div class="text-white font-thin">Semarang, Jawa Tengah</div>
+                            </div>
+                            <div class="bg-gray-100 rounded-sm px-4 py-2 text-xl w-fit">Rp.300,000/Bulan</div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+        <section class="min-w-full pb-24">
+            <div class="container-page">
+                <h1 class="text-2xl font-semibold my-16">Sekolah Pilihan</h1>
+                <div class="grid grid-cols-4 min-w-full gap-6">
+                    {{-- card --}}
+                    <div class="shadow-md max-w-[500px] rounded-sm relative overflow-hidden bg-gray-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 cursor-pointer">
+                        <div class="w-full h-[250px] bg-slate-700 -z-10 p-1" >image</div>
+                        <div class="px-4 py-6 flex items-center justify-start text-xs text-gray-400 space-x-2">
+                            <div>Full Day</div>
+                            <div>Rp.9,500,000</div>
+                        </div>
+                        <div class="bg-white flex justify-star items-end h-20 p-4">
+                            <a href="" class="text-green-600 text-xs font-bold underline">LIHAT SEKOLAH</a>
+                        </div>
+                        <div class="flex flex-col justify-start space-y-2 ml-2 absolute top-36">
+                            <div class="flex space-x-2">
+                                <div class="bg-black text-white rounded-sm text-xs font-light w-fit px-1 uppercase">Akhwat</div>
+                                <div class="bg-black text-white rounded-sm text-xs font-light w-fit px-1 uppercase">Ikhwan</div>
+                            </div>
+                            <h1 class="text-white font-semibold">SDIT Ustman Bin Affan</h1>
+                            <div class="flex justify-start items-center space-x-2 text-xs">
+                                <div class="h-3 w-3 flex justify-center items-center text-gray-400 ">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M12 11.5A2.5 2.5 0 0 1 9.5 9A2.5 2.5 0 0 1 12 6.5A2.5 2.5 0 0 1 14.5 9a2.5 2.5 0 0 1-2.5 2.5M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7"/></svg>
+                                </div>
+                                <div class="text-white font-thin">Semarang, Jawa Tengah</div>
+                            </div>
+                            <div class="bg-gray-100 rounded-sm px-4 py-2 text-xl w-fit">Rp.300,000/Bulan</div>
+                        </div>
+                    </div>
+                    <div class="shadow-md max-w-[500px] rounded-sm relative overflow-hidden bg-gray-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 cursor-pointer">
+                        <div class="w-full h-[250px] bg-slate-700 -z-10 p-1" >image</div>
+                        <div class="px-4 py-6 flex items-center justify-start text-xs text-gray-400 space-x-2">
+                            <div>Full Day</div>
+                            <div>Rp.9,500,000</div>
+                        </div>
+                        <div class="bg-white flex justify-star items-end h-20 p-4">
+                            <a href="" class="text-green-600 text-xs font-bold underline">LIHAT SEKOLAH</a>
+                        </div>
+                        <div class="flex flex-col justify-start space-y-2 ml-2 absolute top-36">
+                            <div class="flex space-x-2">
+                                <div class="bg-black text-white rounded-sm text-xs font-light w-fit px-1 uppercase">Akhwat</div>
+                                <div class="bg-black text-white rounded-sm text-xs font-light w-fit px-1 uppercase">Ikhwan</div>
+                            </div>
+                            <h1 class="text-white font-semibold">SDIT Ustman Bin Affan</h1>
+                            <div class="flex justify-start items-center space-x-2 text-xs">
+                                <div class="h-3 w-3 flex justify-center items-center text-gray-400 ">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M12 11.5A2.5 2.5 0 0 1 9.5 9A2.5 2.5 0 0 1 12 6.5A2.5 2.5 0 0 1 14.5 9a2.5 2.5 0 0 1-2.5 2.5M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7"/></svg>
+                                </div>
+                                <div class="text-white font-thin">Semarang, Jawa Tengah</div>
+                            </div>
+                            <div class="bg-gray-100 rounded-sm px-4 py-2 text-xl w-fit">Rp.300,000/Bulan</div>
+                        </div>
+                    </div>
+                    <div class="shadow-md max-w-[500px] rounded-sm relative overflow-hidden bg-gray-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 cursor-pointer">
+                        <div class="w-full h-[250px] bg-slate-700 -z-10 p-1" >image</div>
+                        <div class="px-4 py-6 flex items-center justify-start text-xs text-gray-400 space-x-2">
+                            <div>Full Day</div>
+                            <div>Rp.9,500,000</div>
+                        </div>
+                        <div class="bg-white flex justify-star items-end h-20 p-4">
+                            <a href="" class="text-green-600 text-xs font-bold underline">LIHAT SEKOLAH</a>
+                        </div>
+                        <div class="flex flex-col justify-start space-y-2 ml-2 absolute top-36">
+                            <div class="flex space-x-2">
+                                <div class="bg-black text-white rounded-sm text-xs font-light w-fit px-1 uppercase">Akhwat</div>
+                                <div class="bg-black text-white rounded-sm text-xs font-light w-fit px-1 uppercase">Ikhwan</div>
+                            </div>
+                            <h1 class="text-white font-semibold">SDIT Ustman Bin Affan</h1>
+                            <div class="flex justify-start items-center space-x-2 text-xs">
+                                <div class="h-3 w-3 flex justify-center items-center text-gray-400 ">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M12 11.5A2.5 2.5 0 0 1 9.5 9A2.5 2.5 0 0 1 12 6.5A2.5 2.5 0 0 1 14.5 9a2.5 2.5 0 0 1-2.5 2.5M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7"/></svg>
+                                </div>
+                                <div class="text-white font-thin">Semarang, Jawa Tengah</div>
+                            </div>
+                            <div class="bg-gray-100 rounded-sm px-4 py-2 text-xl w-fit">Rp.300,000/Bulan</div>
+                        </div>
+                    </div>
+                    <div class="shadow-md max-w-[500px] rounded-sm relative overflow-hidden bg-gray-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 cursor-pointer">
+                        <div class="w-full h-[250px] bg-slate-700 -z-10 p-1" >image</div>
+                        <div class="px-4 py-6 flex items-center justify-start text-xs text-gray-400 space-x-2">
+                            <div>Full Day</div>
+                            <div>Rp.9,500,000</div>
+                        </div>
+                        <div class="bg-white flex justify-star items-end h-20 p-4">
+                            <a href="" class="text-green-600 text-xs font-bold underline">LIHAT SEKOLAH</a>
+                        </div>
+                        <div class="flex flex-col justify-start space-y-2 ml-2 absolute top-36">
+                            <div class="flex space-x-2">
+                                <div class="bg-black text-white rounded-sm text-xs font-light w-fit px-1 uppercase">Akhwat</div>
+                                <div class="bg-black text-white rounded-sm text-xs font-light w-fit px-1 uppercase">Ikhwan</div>
+                            </div>
+                            <h1 class="text-white font-semibold">SDIT Ustman Bin Affan</h1>
+                            <div class="flex justify-start items-center space-x-2 text-xs">
+                                <div class="h-3 w-3 flex justify-center items-center text-gray-400 ">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M12 11.5A2.5 2.5 0 0 1 9.5 9A2.5 2.5 0 0 1 12 6.5A2.5 2.5 0 0 1 14.5 9a2.5 2.5 0 0 1-2.5 2.5M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7"/></svg>
+                                </div>
+                                <div class="text-white font-thin">Semarang, Jawa Tengah</div>
+                            </div>
+                            <div class="bg-gray-100 rounded-sm px-4 py-2 text-xl w-fit">Rp.300,000/Bulan</div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </section> 
+</x-layout>
+        

@@ -1,4 +1,8 @@
+const { addIconSelectors } = require('@iconify/tailwind');
+
 /** @type {import('tailwindcss').Config} */
+
+
 export default {
   content: [
     "./resources/**/*.blade.php",
@@ -8,5 +12,7 @@ export default {
   theme: {
     extend: {},
   },
-  plugins: [],
+  plugins: [
+    // addIconSelectors(['mdi', 'mdi-light']),
+  ],
 }
