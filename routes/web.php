@@ -33,6 +33,11 @@ Route::get('/submit', function () {
 Route::get('/login', function () {
     return view('auth.login', [
         "title" => "Sekolah Sunnah Admin Login Page",
-        "tagline" => "Bantu kami submit data sekolah di sekitar anda"
+    ]);
+});
+
+Route::get('/dashboard', function () {
+    return view('dashboard.dashboard', [
+        "title" => "Sekolah Sunnah Dashboard",
     ]);
 });
