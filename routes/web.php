@@ -11,21 +11,28 @@ Route::get('/', function () {
 
 Route::get('/contact', function () {
     return view('contact', [
-        "title" => "Contact | SekolahSUnnah.com",
+        "title" => "Contact | SekolahSunnah.com",
         "tagline" => "Contact"
     ]);
 });
 
 Route::get('/tentang', function () {
     return view('tentang', [
-        "title" => "Tentang | SekolahSUnnah.com",
+        "title" => "Tentang | SekolahSunnah.com",
         "tagline" => "Tentang"
     ]);
 });
 
 Route::get('/submit', function () {
     return view('submit', [
-        "title" => "Submit Data | SekolahSUnnah.com",
+        "title" => "Submit Data | SekolahSunnah.com",
+        "tagline" => "Bantu kami submit data sekolah di sekitar anda"
+    ]);
+});
+
+Route::get('/login', function () {
+    return view('auth.login', [
+        "title" => "Sekolah Sunnah Admin Login Page",
         "tagline" => "Bantu kami submit data sekolah di sekitar anda"
     ]);
 });
